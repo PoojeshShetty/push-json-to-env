@@ -7,7 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Get Pokemon name
-      uses: ./ # Uses an action in the root directory=
+      uses: PoojeshShetty/push-json-to-env@v1 # Uses an action in the root directory=
       with:
         json_value: ${{ secrets.TEST_CRED }}
         variable_name: 'NEW_VAR'
