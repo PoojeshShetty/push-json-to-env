@@ -1,0 +1,15 @@
+name: 'Push json to env'
+description: 'Get json value and create a json file from its value and add path to the github env with the given variable name'
+inputs:
+  json_value:
+    description: 'JSON string whose file path need to be add to github env'
+    required: true
+  variable_name:
+    description: 'Variable name which should be populated with the path name where the json will be stored and added to the github env '
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.json_value }}
+    - ${{ inputs.variable_name }}
